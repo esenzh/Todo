@@ -1,7 +1,8 @@
 <template>
   <div>
     <Header />
-    <TodoAdd />
+    <br />
+    <TodoAdd v-on:todo="addTodo" />
     <br />
     <TodoList
       v-bind:todos="todos"
@@ -36,6 +37,9 @@ export default {
   methods: {
     deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
+    },
+    addTodo(todo) {
+      this.todos.unshift(todo);
     }
   }
 };
