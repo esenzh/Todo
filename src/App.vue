@@ -1,12 +1,18 @@
 <template>
   <div>
+    <Header />
     <TodoAdd />
-    <br>
-    <TodoList v-bind:todos="todos" msg="Welcome to Your Vue.js App" />
+    <br />
+    <TodoList
+      v-bind:todos="todos"
+      msg="Welcome to Your Vue.js App"
+      v-on:del-todo="deleteTodo"
+    />
   </div>
 </template>
 
 <script>
+import Header from "./components/Header.vue";
 import TodoList from "./components/TodoList.vue";
 import TodoAdd from "./components/TodoAdd.vue";
 
@@ -14,7 +20,8 @@ export default {
   name: "App",
   components: {
     TodoList,
-    TodoAdd
+    TodoAdd,
+    Header
   },
   data() {
     return {
@@ -25,9 +32,13 @@ export default {
         { title: "Buy cigaretes", id: 4, completed: false }
       ]
     };
+  },
+  methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id);
+    }
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>
