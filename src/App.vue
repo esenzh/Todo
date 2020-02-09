@@ -39,7 +39,7 @@ export default {
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
     addTodo(todo) {
-      this.todos.unshift(todo);
+      this.todos = [...this.todos, todo]
     }
   }
 };
