@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # todo
 
 ## Project setup
@@ -23,7 +22,6 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
+
 # Todo
 Todo application using VueJS
->>>>>>> 40a7ffc664d03e3843c3aade13f24ba3dc344930
