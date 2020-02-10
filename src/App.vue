@@ -1,13 +1,13 @@
 <template>
   <div>
     <Header />
-    <br />
-    <TodoAdd v-on:todo="addTodo" />
-    <br />
+    <br>
+    <TodoAdd @todo="addTodo" />
+    <br>
     <TodoList
-      v-bind:todos="todos"
+      :todos="todos"
       msg="Welcome to Your Vue.js App"
-      v-on:del-todo="deleteTodo"
+      @del-todo="deleteTodo"
     />
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
     addTodo(todo) {
-      this.todos = [...this.todos, todo]
+      this.todos = [...this.todos, todo];
     }
   }
 };

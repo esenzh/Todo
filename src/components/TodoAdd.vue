@@ -1,12 +1,18 @@
 <template>
   <form @submit="handleSubmit">
     <input
+      v-model="title"
       class="input-todo"
       type="text"
-      v-model="title"
       placeholder="Title..."
-    />
-    <button class="add-button" type="submit">Add</button>
+      required
+    >
+    <button
+      class="add-button"
+      type="submit"
+    >
+      Add
+    </button>
   </form>
 </template>
 
