@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-      Todo List
+    Todo List
   </div>
 </template>
 
@@ -12,11 +12,11 @@ export default {
 
 <style scoped>
 .header {
-    padding: 10px;
-    text-align: center;
-    background-color: blueviolet;
-    color: #ffffff;
-    font-size: 30px;
-    font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  background-color: blueviolet;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
 }
 </style>
