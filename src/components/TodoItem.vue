@@ -9,18 +9,17 @@
         @change="handleComplete" 
       >
       {{ todo.title }}
-      <button
-        class="delete-button"
-        type="button"
-        @click="$emit('del-todo', todo.id)"
-      >
-        X
-      </button>
+      <i 
+        class="fas fa-trash-alt"
+        @click="handleDelete"
+      />
     </p>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: "TodoItem",
   props: {
@@ -30,8 +29,12 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["deleteTodo"]),
     handleComplete() {
       this.todo.completed = !this.todo.completed;
+    },
+    handleDelete() {
+      this.deleteTodo(this.todo.id);
     }
   }
 };
@@ -46,13 +49,10 @@ export default {
 .is-complete {
   text-decoration: line-through;
 }
-.delete-button {
-  background-color: red;
-  color: #ffffff;
-  width: 25px;
-  height: 25px;
-  padding: 5px;
+i {
+  cursor: pointer;
   float: right;
-  border-radius: 50%;
+  margin-right: 5px;
+  color: red;
 }
 </style>
