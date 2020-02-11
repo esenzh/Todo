@@ -12,7 +12,7 @@
       <button
         class="delete-button"
         type="button"
-        @click="$emit('del-todo', todo.id)"
+        @click="handleDelete"
       >
         X
       </button>
@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: "TodoItem",
   props: {
@@ -30,8 +32,12 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["deleteTodo"]),
     handleComplete() {
       this.todo.completed = !this.todo.completed;
+    },
+    handleDelete() {
+      this.deleteTodo(this.todo.id);
     }
   }
 };

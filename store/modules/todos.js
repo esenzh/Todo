@@ -18,12 +18,16 @@ const actions = {
     },
     addTodo({ commit }, todo) {
         commit('newTodo', todo);
-    } 
+    },
+    deleteTodo({ commit }, id) {
+        commit('removeTodo', id);
+    }
 };
 
 const mutations = {
     setTodos: (state, todos) => (state.todos = todos),
-    newTodo: (state, todo) => state.todos.unshift(todo)
+    newTodo: (state, todo) => state.todos.unshift(todo),
+    removeTodo: (state, id) => state.todos = state.todos.filter(todo => todo.id !== id)
 };
 
 export default {
