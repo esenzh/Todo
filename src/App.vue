@@ -2,13 +2,9 @@
   <div>
     <Header />
     <br>
-    <TodoAdd @todo="addTodo" />
+    <TodoAdd />
     <br>
-    <TodoList
-      :todos="todos"
-      msg="Welcome to Your Vue.js App"
-      @del-todo="deleteTodo"
-    />
+    <TodoList />
   </div>
 </template>
 
@@ -23,24 +19,6 @@ export default {
     TodoList,
     TodoAdd,
     Header
-  },
-  data() {
-    return {
-      todos: [
-        { title: "Buy milk", id: 1, completed: false },
-        { title: "Buy bread", id: 2, completed: false },
-        { title: "Buy beer", id: 3, completed: false },
-        { title: "Buy cigaretes", id: 4, completed: false }
-      ]
-    };
-  },
-  methods: {
-    deleteTodo(id) {
-      this.todos = this.todos.filter(todo => todo.id !== id);
-    },
-    addTodo(todo) {
-      this.todos = [...this.todos, todo];
-    }
   }
 };
 </script>

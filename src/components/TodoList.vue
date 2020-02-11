@@ -1,29 +1,30 @@
 <template>
   <div class="todo-list">
     <div 
-      v-for="todo in todos" 
+      v-for="todo in TODOS" 
       :key="todo.id"
     >
       <TodoItem 
         :todo="todo" 
-        @del-todo="$emit('del-todo', todo.id)" 
       />
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 import TodoItem from "./TodoItem";
 export default {
   name: "TodoList",
   components: {
     TodoItem
   },
-  props: {
-    todos: {
-      type: Array,
-      required: true
-    }
+  computed: mapGetters(['TODOS']),
+  created() {
+    this.fetchTodos();
+  },
+  methods: {
+    ...mapActions(['fetchTodos'])
   }
 };
 </script>

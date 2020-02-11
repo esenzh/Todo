@@ -54,5 +54,6 @@ export default {
   padding: 5px;
   float: right;
   border-radius: 50%;
+  cursor: pointer;
 }
 </style>

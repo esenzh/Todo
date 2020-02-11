@@ -1,5 +1,7 @@
 <template>
-  <form @submit="handleSubmit">
+  <form 
+    @submit="handleSubmit"
+  >
     <input
       v-model="title"
       class="input-todo"
@@ -7,7 +9,7 @@
       placeholder="Title..."
       required
     >
-    <button
+    <button 
       class="add-button"
       type="submit"
     >
@@ -18,6 +20,8 @@
 
 <script>
 import uuid from "uuid";
+import { mapActions } from "vuex";
+
 export default {
   name: "TodoAdd",
   data() {
@@ -26,6 +30,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["addTodo"]),
     handleSubmit(e) {
       e.preventDefault();
       const newTodo = {
@@ -33,8 +38,7 @@ export default {
         title: this.title,
         completed: false
       };
-      this.title = "";
-      this.$emit("todo", newTodo);
+      this.addTodo(newTodo);
     }
   }
 };
@@ -56,5 +60,6 @@ export default {
   border-radius: 5px;
   background-color: blueviolet;
   color: #ffffff;
+  cursor: pointer;
 }
 </style>
