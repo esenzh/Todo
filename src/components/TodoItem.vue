@@ -45,6 +45,15 @@ export default {
   background-color: lightgrey;
   padding: 3px;
   border-bottom: 1px solid #000000;
+  width: 400px;
+}
+@media screen and (max-width: 450px) {
+  .todo-item {
+    width: 300px;
+  }
+}
+.todo-item p input {
+  float: left;
 }
 .is-complete {
   text-decoration: line-through;
