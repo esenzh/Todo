@@ -1,5 +1,6 @@
 <template>
   <form 
+    class="submit-form"
     @submit="handleSubmit"
   >
     <input
@@ -10,7 +11,6 @@
       required
     >
     <button 
-      class="add-button"
       type="submit"
     >
       Add
@@ -53,7 +53,10 @@ export default {
   border-radius: 5px;
   margin-right: 5px;
 }
-.add-button {
+.submit-form {
+  text-align: center;
+}
+.submit-form button {
   padding: 5px;
   font-size: 17px;
   width: 100px;

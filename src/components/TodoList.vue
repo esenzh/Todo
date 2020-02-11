@@ -1,10 +1,9 @@
 <template>
   <div class="todo-list">
-    <div 
-      v-for="todo in TODOS" 
-      :key="todo.id"
-    >
+    <div>
       <TodoItem 
+        v-for="todo in TODOS" 
+        :key="todo.id"
         :todo="todo" 
       />
     </div>
@@ -31,6 +30,8 @@ export default {
 
 <style scoped>
 .todo-list {
-  width: 400px;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
 }
 </style>
