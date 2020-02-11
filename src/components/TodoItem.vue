@@ -9,13 +9,10 @@
         @change="handleComplete" 
       >
       {{ todo.title }}
-      <button
-        class="delete-button"
-        type="button"
+      <i 
+        class="fas fa-trash-alt"
         @click="handleDelete"
-      >
-        X
-      </button>
+      />
     </p>
   </div>
 </template>
@@ -52,14 +49,10 @@ export default {
 .is-complete {
   text-decoration: line-through;
 }
-.delete-button {
-  background-color: red;
-  color: #ffffff;
-  width: 25px;
-  height: 25px;
-  padding: 5px;
-  float: right;
-  border-radius: 50%;
+i {
   cursor: pointer;
+  float: right;
+  margin-right: 5px;
+  color: red;
 }
 </style>
